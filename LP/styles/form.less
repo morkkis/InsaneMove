@@ -1,0 +1,193 @@
+@import (reference) 'colors';
+
+.container {
+    max-width: 30em;
+    margin: 2em auto;
+  }
+  
+
+   .input {
+       border: 1px solid @asi-dark-blue;
+       height: 3.236em;
+       position: relative;
+       display: flex;
+       align-items: center;
+       font-family: "Open Sans", sans-serif;
+       font-size: 1em;
+   
+       &-control,
+       &-label {
+           height: 1.618em;
+           line-height: 1.618em;
+           font-size: inherit;
+   
+           &::selection {
+               color: #F5F5F5;
+               background: @asi-black;
+           }
+           &::-moz-selection {
+               color: #F5F5F5;
+               background: @asi-black;
+           } 
+       }
+
+       :not(*):placeholder-shown, .input-label {
+        display: block;
+        -webkit-transform: translateY(-61.804697157%) scale(0.6180469716);
+                transform: translateY(-61.804697157%) scale(0.6180469716);
+        color: @asi-black;
+      }
+
+      :not(*):placeholder-shown, .input-control {
+        -webkit-transform: translateY(30.9023485785%);
+                transform: translateY(30.9023485785%);
+      }
+     }
+   
+     .input-control {
+       color: @asi-black;
+       position: relative;
+       flex: 1;
+       z-index: 2;
+       padding: 0 0 0 0.809em;
+       transition: transform 0.3s;
+       background: transparent;
+       border: none;
+
+       &:focus {
+        outline: none;
+       }
+
+       &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 60em #F5F5F5 inset !important;
+      }
+
+      &:-webkit-autofill, 
+      &:-webkit-autofill:hover, 
+      &:-webkit-autofill:focus, 
+      &:-webkit-autofill:active {
+        transition-delay: 9999s;
+        transition-property: background-color, color;
+      }
+     }
+  
+
+     .input-label {
+       position: absolute;
+       top: 50%;
+       right: 0;
+       bottom: 0;
+       left: 0.809em;
+       z-index: 1;
+       display: none;
+       transition-duration: 0.3s;
+       transition-property: color, -webkit-transform;
+       transition-property: transform, color;
+       transition-property: transform, color, -webkit-transform;
+       -webkit-transform-origin: top left;
+               transform-origin: top left;
+       pointer-events: none;
+       text-align: left;
+     }
+
+     .input-back, 
+     .input-label {
+       margin: 0;
+     }
+
+     .input-back {
+       position: absolute;
+       top: 0;
+       right: 0;
+       bottom: 0;
+       left: 0;
+       z-index: 0;
+       background: #F5F5F5;
+       &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        display: block;
+        opacity: 0;
+        box-shadow: 0 0 0 0.125em @asi-blue;
+        transition: opacity 0.3s;
+      }
+     }
+
+     .input > * {
+       cursor: text;
+     }
+
+     .input-control {
+        &:focus ~ .input-back::before {
+            opacity: 1;
+          }
+        
+        &[disabled] {
+            color: #7d7d7d;
+            cursor: not-allowed;
+
+            &  ~ .input-label {
+                color: #7d7d7d;
+                cursor: not-allowed;
+              }
+            
+            & ~ .input-back {
+                cursor: not-allowed;
+              }
+        }
+
+        &::-webkit-input-placeholder {
+            color: @asi-black;
+          }
+          &:-ms-input-placeholder {
+            color: @asi-black;
+          }
+          &::-ms-input-placeholder {
+            color: @asi-black;
+          }
+          &::placeholder {
+            color: @asi-black;
+          }
+
+          &:placeholder-shown::-webkit-input-placeholder {
+            color: transparent;
+          }
+          &:placeholder-shown:-ms-input-placeholder {
+            color: transparent;
+          }
+          &:placeholder-shown::-ms-input-placeholder {
+            color: transparent;
+          }
+          &:placeholder-shown::placeholder {
+            color: transparent;
+          }
+
+          &:placeholder-shown ~ .input-label {
+            -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+            color: @asi-dark-blue;
+          }
+          &:placeholder-shown {
+            -webkit-transform: translateY(0);
+                    transform: translateY(0);
+          }
+
+          &:-moz-ui-invalid {
+            box-shadow: none;
+          }
+          &:-moz-ui-invalid ~ .input-back::before {
+            box-shadow: 0 0 0 0.125em #FF6666;
+            opacity: 1;
+          }
+          &:-moz-ui-invalid:focus ~ .input-back::before {
+            box-shadow: 0 0 0 0.125em #ff3d3d;
+          }
+     }
+
+     
+   
+   

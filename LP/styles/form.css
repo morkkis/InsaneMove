@@ -1,0 +1,166 @@
+.container {
+  max-width: 30em;
+  margin: 2em auto;
+}
+.input {
+  border: 1px solid #2e2f89;
+  height: 3.236em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+.input-control,
+.input-label {
+  height: 1.618em;
+  line-height: 1.618em;
+  font-size: inherit;
+}
+.input-control::selection,
+.input-label::selection {
+  color: #F5F5F5;
+  background: #2d2d2d;
+}
+.input-control::-moz-selection,
+.input-label::-moz-selection {
+  color: #F5F5F5;
+  background: #2d2d2d;
+}
+.input :not(*):placeholder-shown,
+.input .input-label {
+  display: block;
+  -webkit-transform: translateY(-61.80469716%) scale(0.61804697);
+  transform: translateY(-61.80469716%) scale(0.61804697);
+  color: #2d2d2d;
+}
+.input :not(*):placeholder-shown,
+.input .input-control {
+  -webkit-transform: translateY(30.90234858%);
+  transform: translateY(30.90234858%);
+}
+.input-control {
+  color: #2d2d2d;
+  position: relative;
+  flex: 1;
+  z-index: 2;
+  padding: 0 0 0 0.809em;
+  transition: transform 0.3s;
+  background: transparent;
+  border: none;
+}
+.input-control:focus {
+  outline: none;
+}
+.input-control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 60em #F5F5F5 inset !important;
+}
+.input-control:-webkit-autofill,
+.input-control:-webkit-autofill:hover,
+.input-control:-webkit-autofill:focus,
+.input-control:-webkit-autofill:active {
+  transition-delay: 9999s;
+  transition-property: background-color, color;
+}
+.input-label {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0.809em;
+  z-index: 1;
+  display: none;
+  transition-duration: 0.3s;
+  transition-property: color, -webkit-transform;
+  transition-property: transform, color;
+  transition-property: transform, color, -webkit-transform;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  pointer-events: none;
+  text-align: left;
+}
+.input-back,
+.input-label {
+  margin: 0;
+}
+.input-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: #F5F5F5;
+}
+.input-back::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: block;
+  opacity: 0;
+  box-shadow: 0 0 0 0.125em #3083c4;
+  transition: opacity 0.3s;
+}
+.input > * {
+  cursor: text;
+}
+.input-control:focus ~ .input-back::before {
+  opacity: 1;
+}
+.input-control[disabled] {
+  color: #7d7d7d;
+  cursor: not-allowed;
+}
+.input-control[disabled] ~ .input-label {
+  color: #7d7d7d;
+  cursor: not-allowed;
+}
+.input-control[disabled] ~ .input-back {
+  cursor: not-allowed;
+}
+.input-control::-webkit-input-placeholder {
+  color: #2d2d2d;
+}
+.input-control:-ms-input-placeholder {
+  color: #2d2d2d;
+}
+.input-control::-ms-input-placeholder {
+  color: #2d2d2d;
+}
+.input-control::placeholder {
+  color: #2d2d2d;
+}
+.input-control:placeholder-shown::-webkit-input-placeholder {
+  color: transparent;
+}
+.input-control:placeholder-shown:-ms-input-placeholder {
+  color: transparent;
+}
+.input-control:placeholder-shown::-ms-input-placeholder {
+  color: transparent;
+}
+.input-control:placeholder-shown::placeholder {
+  color: transparent;
+}
+.input-control:placeholder-shown ~ .input-label {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #2e2f89;
+}
+.input-control:placeholder-shown {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.input-control:-moz-ui-invalid {
+  box-shadow: none;
+}
+.input-control:-moz-ui-invalid ~ .input-back::before {
+  box-shadow: 0 0 0 0.125em #FF6666;
+  opacity: 1;
+}
+.input-control:-moz-ui-invalid:focus ~ .input-back::before {
+  box-shadow: 0 0 0 0.125em #ff3d3d;
+}
